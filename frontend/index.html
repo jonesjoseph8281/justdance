@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Just Dance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="landing">
+    <h1>Just Dance</h1>
+    
+    <label class="custom-upload">
+      Choose Dance Video
+      <input type="file" id="videoUpload" accept="video/*" />
+    </label>
+
+    <button id="startBtn" disabled>Start Dancing</button>
+  </div>
+
+  <div id="danceContainer" class="hidden">
+    <div class="videoBox">
+      <h2>Original Video</h2>
+      <video id="uploadedVideo" controls></video>
+    </div>
+    <div class="videoBox">
+      <h2>Your Dance (Webcam)</h2>
+      <video id="webcamVideo" autoplay muted playsinline></video>
+    </div>
+  </div>
+
+  <div id="scoreScreen" class="hidden">
+    <h2>Your Dance Score</h2>
+    <p id="scoreText">Accuracy: 0%</p>
+    <button onclick="location.reload()">Try Again</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

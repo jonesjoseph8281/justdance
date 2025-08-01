@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  color: white;
+  text-align: center;
+}
+
+#landing {
+  padding: 50px 20px;
+}
+
+.custom-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffdd57;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.custom-upload input[type="file"] {
+  display: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffdd57;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px;
+}
+
+button:hover, .custom-upload:hover {
+  background-color: #fff176;
+}
+
+#danceContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.videoBox {
+  width: 45%;
+}
+
+video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border: 5px solid white;
+  border-radius: 10px;
+  background: black;
+}
+
+#scoreScreen {
+  padding: 50px 20px;
+}
+
+.hidden {
+  display: none;
+}
