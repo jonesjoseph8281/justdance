@@ -2,36 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Just Dance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just Dance Clone</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="landing">
-    <h1>Just Dance</h1>
+    <h1>🎵 Just Dance Clone 🎵</h1>
+    <p>Upload a dance video and show us your moves!</p>
     
     <label class="custom-upload">
-      Choose Dance Video
+      📁 Choose Dance Video
       <input type="file" id="videoUpload" accept="video/*" />
     </label>
 
-    <button id="startBtn" disabled>Start Dancing</button>
+    <button id="startBtn" disabled>🕺 Start Dancing</button>
   </div>
 
   <div id="danceContainer" class="hidden">
     <div class="videoBox">
-      <h2>Original Video</h2>
+      <h2>🎬 Original Video</h2>
       <video id="uploadedVideo" controls></video>
     </div>
     <div class="videoBox">
-      <h2>Your Dance (Webcam)</h2>
+      <h2>📹 Your Dance (Webcam)</h2>
       <video id="webcamVideo" autoplay muted playsinline></video>
+    </div>
+    <div class="videoBox hidden" id="playbackBox">
+      <h2>🎥 Your Recording</h2>
+      <video id="playback" controls></video>
     </div>
   </div>
 
   <div id="scoreScreen" class="hidden">
-    <h2>Your Dance Score</h2>
-    <p id="scoreText">Accuracy: 0%</p>
-    <button onclick="location.reload()">Try Again</button>
+    <h2>🏆 Your Dance Score</h2>
+    <div id="scoreDisplay">
+      <p id="scoreText">Accuracy: 0%</p>
+      <div id="scoreBar">
+        <div id="scoreFill"></div>
+      </div>
+    </div>
+    <button onclick="location.reload()">🔄 Try Again</button>
   </div>
 
   <div id="loadingScreen" class="hidden">

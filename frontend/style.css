@@ -4,21 +4,45 @@ body {
   background: linear-gradient(135deg, #ff6ec4, #7873f5);
   color: white;
   text-align: center;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 #landing {
   padding: 50px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
 }
 
 .custom-upload {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 15px 30px;
   background-color: #ffdd57;
   color: black;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 25px;
   cursor: pointer;
-  margin: 10px;
+  margin: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.custom-upload:hover {
+  background-color: #fff176;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 .custom-upload input[type="file"] {
@@ -26,46 +50,149 @@ body {
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 15px 30px;
+  font-size: 18px;
   background-color: #ffdd57;
   color: black;
   border: none;
-  border-radius: 8px;
+  border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
-  margin: 10px;
+  margin: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-button:hover, .custom-upload:hover {
+button:hover {
   background-color: #fff176;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 #danceContainer {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   padding: 30px;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .videoBox {
   width: 45%;
+  min-width: 300px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.videoBox h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
 }
 
 video {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: contain;
-  border: 5px solid white;
+  border: 3px solid white;
   border-radius: 10px;
   background: black;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 #scoreScreen {
   padding: 50px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#scoreDisplay {
+  margin: 30px 0;
+}
+
+#scoreText {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#scoreBar {
+  width: 100%;
+  height: 30px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#scoreFill {
+  height: 100%;
+  width: 0%;
+  background: #4CAF50;
+  transition: width 0.1s ease, background-color 0.3s ease;
+  border-radius: 15px;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+#loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255,255,255,0.3);
+  border-top: 5px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  #danceContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .videoBox {
+    width: 90%;
+    min-width: 250px;
+  }
+  
+  button, .custom-upload {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
 }
